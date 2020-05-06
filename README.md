@@ -16,7 +16,7 @@ A cheat-sheet for creating web apps with the Django framework using the Python l
 - Make main folder with `$ mkdir <folder>` and navigate to it with `$ cd <folder>`
 - Initialize pipenv with `$ pipenv install`
 - Enter pipenv shell with `$ pipenv shell`
-- Install django with `$ pipenv install django` use can set the version with example `django==3.*`
+- Install django with `$ pipenv install django` you can set the version with example `django==3.*`
 - Install other package dependencies with `$ pipenv install <package_name>`
 
 ## :blue_book: Creating a project
