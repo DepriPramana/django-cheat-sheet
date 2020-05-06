@@ -16,7 +16,7 @@ A cheat-sheet for creating web apps with the Django framework using the Python l
 - Make main folder with `$ mkdir <folder>` and navigate to it with `$ cd <folder>`
 - Initialize pipenv with `$ pipenv install`
 - Enter pipenv shell with `$ pipenv shell`
-- Install django with `$ pipenv install django`
+- Install django with `$ pipenv install django` use can set the version with example `django==3.*`
 - Install other package dependencies with `$ pipenv install <package_name>`
 
 ## :blue_book: Creating a project
@@ -101,6 +101,7 @@ urlpatterns = [
     path('', views.index, name='index'),
 ]
 ```
+- `name='index'` for namespace when access from html template like `{% url 'appname:index' %}` so we can get elegan urls
 - Now within the project directory, edit `urls.py` to include the following
 ```python
 from django.contrib import admin
@@ -121,6 +122,27 @@ urlpatterns = [
 - The `urls.py` file within app directories are organized by the `urls.py` found in the project folder.
 
 ## :art: Creating a template
+- in main directory project open file setting.py and set `DIR` name from templates html
+```
+'DIRS': [os.path.join(BASE_DIR, 'templates')],
+```
+```
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+```
 - Within the app directory, HTML, CSS, and JavaScript files are located within the following locations:
 ```
 app/
